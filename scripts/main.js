@@ -1,16 +1,16 @@
 const myLibrary = [];
 
-for (let i = 0; i < localStorage.length; i++) {
+for (let i = 0; i < localStorage.length; i += 1) {
   const key = localStorage.key(i);
   myLibrary.push(JSON.parse(localStorage.getItem(key)));
 }
 
-const inp_title = document.getElementById('inp_title');
-const inp_author = document.getElementById('inp_author');
-const inp_pages = document.getElementById('inp_pages');
-const inp_description = document.getElementById('inp_description');
-const inp_read = document.getElementById('inp_toggle');
-const inp_submit = document.getElementById('inpsubmit');
+const title = document.getElementById('inp_title');
+const author = document.getElementById('inp_author');
+const pages = document.getElementById('inp_pages');
+const description = document.getElementById('inp_description');
+const read = document.getElementById('inp_toggle');
+const submit = document.getElementById('inpsubmit');
 const bookContainer = document.getElementById('bookContainer');
 
 function Book(title, author, pages, description, read) {
@@ -22,25 +22,25 @@ function Book(title, author, pages, description, read) {
 }
 
 function addBookToLibrary() {
-  // myLibrary.push(new Book(inp_title.value, inp_author.value, inp_pages.value, inp_description.value, inp_read.checked));
-  localStorage.setItem(inp_title.value, JSON.stringify(new Book(inp_title.value, inp_author.value, inp_pages.value, inp_description.value, inp_read.checked)));
-  location.reload();
+  const newBook = new Book(title.value, author.value, pages.value, description.value, read.checked);
+  localStorage.setItem(title.value, JSON.stringify(newBook));
+  window.location.reload();
 }
 
-inp_submit.onclick = function () {
+submit.onclick = function () {
   addBookToLibrary();
 };
 
 function deleteBook(title) {
   localStorage.removeItem(title);
-  location.reload();
+  window.location.reload();
 }
 
 function updateToggle(title) {
   const oBook = JSON.parse(localStorage.getItem(title));
-  oBook.read = inp_read.checked;
+  oBook.read = read.checked;
   localStorage.setItem(title, JSON.stringify(oBook));
-  location.reload();
+  window.location.reload();
 }
 
 function renderBook(book) {
@@ -63,5 +63,4 @@ function renderBook(book) {
   </div>`;
   bookContainer.innerHTML += template;
 }
-
 myLibrary.forEach((book) => renderBook(book));
