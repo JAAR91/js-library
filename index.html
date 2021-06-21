@@ -5,29 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
     <title>Document</title>
 </head>
 <body>
+
     
-    <div class="container p-5">
-        <div id="bookContainer" class="d-flex flex-wrap">
-            
+    
+        <div class="container p-5">
+            <div id="bookContainer" class="d-flex flex-wrap">
+                
         </div>
-        <div action="" class="mx-5" id="addBookForm">
-            <label for="title" class="form-label">Book Title</label>
-            <input type="text" id="inp_title" class="form-control" name="title">
-            <label for="author" class="form-label">Author</label>
-            <input type="text" id="inp_author" class="form-control" name="author">
-            <label for="pages" class="form-label">Number of Pages</label>
-            <input type="number" id="inp_pages" class="form-control" name="pages">
-            <label for="summary" class="form-label">Description</label>
-            <textarea name="summay" id="inp_description" class="form-control" placeholder="brief description of book" name="summary"></textarea>
-            <div class="form-check form-switch p-3 mt-3" role="group" aria-label="Basic radio toggle button group">
-            <input type="checkbox" class="form-check-input" name="read" id="inp_toggle" autocomplete="off" value="false">
-            <label class="form-check-label" for="inp_toggle">Have you read this book? </label>
-            </div><br/>
-            <button id="inpsubmit" type="submit" class="btn btn-outline-success  text-center p-2 w-50 mt-5 mx-auto">Submit</button>  
+
+        <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Add Book</button>
+
+        <div class="offcanvas book-form start-50 top-50 translate-middle" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasBottomLabel">Add New Book</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
+        <div class="offcanvas-body small">
+            <div action="" class="mx-5" id="addBookForm">
+                <label for="title" class="form-label">Book Title</label>
+                <input type="text" id="inp_title" class="form-control" name="title">
+                <label for="author" class="form-label">Author</label>
+                <input type="text" id="inp_author" class="form-control" name="author">
+                <label for="pages" class="form-label">Number of Pages</label>
+                <input type="number" id="inp_pages" class="form-control" name="pages">
+                <label for="summary" class="form-label">Description</label>
+                <textarea name="summay" id="inp_description" class="form-control" placeholder="brief description of book" name="summary"></textarea>
+                <div class="form-check form-switch p-3 mt-3" role="group" aria-label="Basic radio toggle button group">
+                <input type="checkbox" class="form-check-input" name="read" id="inp_toggle" autocomplete="off" value="false">
+                <label class="form-check-label" for="inp_toggle">Have you read this book? </label>
+                </div><br/>
+                <button id="inpsubmit" type="submit" class="btn btn-outline-success  text-center p-2 w-50 mt-2 mx-auto">Submit</button>  
+            </div>
+        </div>
+        </div>
+        
     </div>
 
     
