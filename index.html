@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,17 +26,17 @@
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body small">
-            <div action="" class="mx-5" id="addBookForm">
+            <div class="mx-5">
                 <label for="title" class="form-label">Book Title</label>
                 <input type="text" id="title" class="form-control" name="title">
                 <label for="author" class="form-label">Author</label>
                 <input type="text" id="author" class="form-control" name="author">
                 <label for="pages" class="form-label">Number of Pages</label>
                 <input type="number" id="pages" class="form-control" name="pages">
-                <label for="summary" class="form-label">Description</label>
-                <textarea name="summay" id="description" class="form-control" placeholder="brief description of book" name="summary"></textarea>
+                <label for="description" class="form-label">Description</label>
+                <textarea name="summay" id="description" class="form-control" placeholder="brief description of book"></textarea>
                 <div class="form-check form-switch p-3 mt-3" role="group" aria-label="Basic radio toggle button group">
-                <input type="checkbox" class="form-check-input" name="read" id="inp_toggle" autocomplete="off" value="false">
+                <input type="checkbox" class="form-check-input" name="read" id="inp_toggle" value="false">
                 <label class="form-check-label" for="inp_toggle">Have you read this book? </label>
                 </div><br/>
                 <button id="inpsubmit" type="submit" class="btn btn-outline-success  text-center p-2 w-50 mt-2 mx-auto">Submit</button>  
