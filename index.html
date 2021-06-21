@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container p-5  ">
-        <form action="" class="mx-5">
+        <div action="" class="mx-5" id="addBookForm">
             <label for="title" class="form-label">Book Title</label>
             <input type="text" id="inp_title" class="form-control" name="title">
             <label for="author" class="form-label">Author</label>
@@ -19,11 +19,11 @@
             <label for="summary" class="form-label">Description</label>
             <textarea name="summay" id="inp_description" class="form-control" placeholder="brief description of book" name="summary"></textarea>
             <div class="form-check form-switch p-3 mt-3" role="group" aria-label="Basic radio toggle button group">
-            <input type="checkbox" class="form-check-input" name="read" id="inp_toggle" autocomplete="off" value="false" checked>
+            <input type="checkbox" class="form-check-input" name="read" id="inp_toggle" autocomplete="off" value="false">
             <label class="form-check-label" for="inp_toggle">Have you read this book? </label>
             </div><br/>
-            <button type="submit" class="btn btn-outline-success  text-center p-2 w-50 mt-5 mx-auto">Submit</button>  
-        </form>
+            <button id="inpsubmit" type="submit" class="btn btn-outline-success  text-center p-2 w-50 mt-5 mx-auto" onclick="addBookToLibrary()">Submit</button>  
+        </div>
     </div>
 
     
